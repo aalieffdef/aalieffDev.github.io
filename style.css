@@ -1,0 +1,259 @@
+* {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-family: segoe ui;
+    box-sizing: border-box;
+    transition: .1s linear;
+}
+
+:root {
+    --bg-body: rgb(228, 228, 228);
+    --navBody: #fff;
+
+}
+
+/* DarkMode===== */
+.darkModeOn {
+    --navBody: rgb(24, 33, 30);
+    --bg-body: rgb(24, 33, 30);
+    --borderColor: rgb(69, 69, 69);
+    color: rgb(245, 245, 245);
+}
+
+.darkModeOn .content {
+    border: 1px solid var(--borderColor)
+}
+
+.darkModeOn img {
+    filter: invert(80%);
+}
+
+.darkModeOn nav {
+    border-bottom: 1px solid var(--borderColor)
+}
+
+/* Akhir darkmode===== */
+a {
+    text-decoration: none;
+    color: rgb(101, 129, 255);
+}
+
+a:hover {
+    color: rgb(73, 53, 218);
+}
+
+body {
+    background: var(--bg-body);
+    min-height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+nav {
+    height: 50px;
+    width: 100%;
+    background: var(--navBody);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 11px rgba(0, 0, 0, 0.057)
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+a.brand {
+    transform: scale(1.7);
+    display: block;
+}
+
+nav .menu a {
+    margin: 0 2px;
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 5px;
+    color: #666;
+    transition: .2s ease-in-out;
+}
+
+.menu a:hover {
+    color: #000 !important;
+}
+
+.content {
+    margin-top: 20px;
+    background: var(--navBody);
+    padding: 2em;
+    min-height: 80vh;
+    box-shadow: 0 5px 11px rgba(0, 0, 0, 0.205);
+    border-radius: 9px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 30px auto;
+}
+
+ol,
+ul {
+    margin: 8px 30px;
+}
+
+li {
+    padding: 3px 1px;
+    color: rgb(56, 56, 56);
+}
+
+hr {
+    height: 1px;
+    border: none;
+    background: rgb(85, 85, 85);
+    border-radius: 30px;
+    margin: 6px auto;
+}
+
+.b {
+    margin-top: 10px;
+    display: block;
+}
+
+span {
+    display: block;
+    text-indent: 1px;
+    line-height: 24px;
+}
+
+.profile {
+    width: 150px;
+    height: 150px;
+    background: rgb(211, 211, 211);
+    border-radius: 12px;
+    margin: 12px 0;
+}
+
+.kontak {
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+#darkIcon {
+    display: inline-block;
+    transform: scale(2);
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+}
+
+#checkBox {
+    transform: translate(-2px, 10px);
+    width: 30px;
+    height: 30px;
+    display: block;
+    z-index: 1;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#checkBoxMenu {
+    transform: translate(-2px, 10px);
+    ;
+    width: 30px;
+    height: 30px;
+    display: block;
+    z-index: 1;
+    opacity: 1;
+    cursor: pointer;
+    display: none;
+}
+
+#menuToggle {
+    display: none;
+}
+
+#navMenuIcon {
+    display: none;
+    transform: translate(5px, -20px) scale(1.5);
+}
+
+@media screen and (max-width: 700px) {
+    .kontak {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #content {
+        width: 100%;
+        margin-top: 0;
+        border-radius: 0;
+    }
+
+    #menuToggle {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        background: var(--bg-body);
+        position: absolute;
+        top: 55px;
+        right: 0;
+        z-index: 1;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        border-radius: 9px;
+        box-shadow: 0 5px 11px rgba(0, 0, 0, 0.205);
+        padding: 1px 40px;
+    }
+
+    .darkMenu {
+        background: var(--bg-body);
+        border: 1px solid #666;
+    }
+
+    .darkMenu a {
+        color: rgb(205, 205, 205);
+    }
+
+    nav .menu a {
+        /* border: 2px solid #eee; */
+        border-radius: 0px;
+        padding: 12px;
+        border-bottom: 1px solid rgb(171, 171, 171);
+    }
+
+    nav .menu a:last-child {
+        border: none;
+    }
+
+    #checkBoxMenu {
+        display: block;
+        transform: translateY(15px) translateX(-7px);
+        opacity: 0;
+    }
+
+    #navMenuIcon {
+        display: block;
+        transform: scale(1.5) translateY(-7px);
+        cursor: pointer;
+    }
+
+}
